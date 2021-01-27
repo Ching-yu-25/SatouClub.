@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✧*｡白糖少年｡*✧</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="mobile-top d-flex d-md-none justify-content-between align-items-center">
+        <a href="index.html">
+          <img src="/img/logo.svg" alt="" class="img-fluid">
+        </a>
+        <a href="#" class="d-block d-md-none" id="hamburger">
+          <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+            <path class="line top"
+              d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+            <path class="line middle" d="m 30,50 h 40" />
+            <path class="line bottom"
+              d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+          </svg>
+        </a>
+      </div>
+      <nav>
+        <a href="info.html">
+          <img src="/img/flw1.svg" alt="" class="img-fluid">
+          <div>社團簡介</div>
+        </a>
+        <a href="pro_list.html">
+          <img src="/img/flw2.svg" alt="" class="img-fluid">
+          <div>創作商品</div>
+        </a>
+        <a href="index.html" id="logo">
+          <img src="/img/logo.svg" alt="" class="img-fluid">
+        </a>
+        <a href="record.html">
+          <img src="/img/flw3.svg" alt="" class="img-fluid">
+          <div>參場紀錄</div>
+        </a>
+        <a href="open_art.html">
+          <img src="/img/flw4.svg" alt="" class="img-fluid">
+          <div>無料公開</div>
+        </a>
+      </nav>
+    </div>
+  </header>
+  <!-- logo top -->
+  <section class="logo-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="logo"><img src="/img/logotext.svg" class="img-fluid" alt=""></div>
+          <div class="person"><img src="/img/idxmainimg.png" class="img-fluid" alt=""></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- bottom -->
+  <section class="news-area">
+    <div class="container">
+      <div class="row">
+        <!-- 輪播 -->
+        <div class="col-lg-9 text-center">
+          <div class="maintit">最新消息</div>
+          <div class="swiper-container news-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" style="background-image: url(/img/annouce-1.png);"></div>
+              <div class="swiper-slide" style="background-image: url(/img/annouce-1.png);"></div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next news-next"></div>
+            <div class="swiper-button-prev news-prev"></div>
+          </div>
+
+        </div>
+        <!-- plurk -->
+        <div class="col-lg-3 text-center mt-lg-0 mt-3">
+          <div class="maintit">噗浪</div>
+          <iframe
+            src="https://www.plurk.com/getWidget?uid=13991888&amp;h=375&amp;w=300&amp;u_info=2&amp;bg=C79564&tl=F8F4EF"
+            width="100%" frameborder="0" height="375" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+    <footer class="mt-4">
+      <div class="container">
+        <p class="py-3">Copyright © 2021 Satousyounen Club.</p>
+      </div>
+    </footer>
+  </section>
+
+  <!-- 右側浮動 -->
+  <section class="rightfixed">
+    <a href="https://www.plurk.com/iku1021"><img src="/img/plurkicon.svg" alt="" class="img-fluid"></a>
+    <a href="https://peing.net/zh-TW/ae4db7cdfd5c844"><img src="/img/talkboxicon.svg" alt="" class="img-fluid"></a>
+  </section>
+
+  <!-- js -->
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/node_modules/swiper/swiper-bundle.min.js"></script>
+  <script src="/js/custom.js"></script>
+</body>
+
+</html>
