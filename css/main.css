@@ -1,0 +1,459 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*--mixin--*/
+html {
+  font-size: 16px;
+}
+
+body {
+  background: #F8F4EF;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  background: url(../img/topbg.png) repeat-x top left;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  header .container {
+    max-width: unset;
+  }
+}
+
+.mobile-top a:not(#hamburger) {
+  width: 60px;
+}
+
+nav {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1.25rem;
+}
+
+nav a {
+  color: #C79564;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+nav a * {
+  -webkit-transition: .5s color;
+  transition: .5s color;
+}
+
+nav a#logo {
+  max-width: 80px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: .5s transform;
+  transition: .5s transform;
+}
+
+nav a#logo:hover {
+  -webkit-transition: .5s transform;
+  transition: .5s transform;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+@media screen and (max-width: 767px) {
+  nav a#logo {
+    display: none;
+  }
+}
+
+nav a:not(:nth-child(2)):not(#logo):not(:last-child)::after {
+  content: "";
+  position: absolute;
+  border-right: 1px solid #C79564;
+  height: 1rem;
+  bottom: 0;
+  right: -80%;
+}
+
+nav a:first-child:before, nav a:nth-child(4):before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #87A4FF;
+}
+
+nav a:nth-child(2):before, nav a:last-child:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #7EC97A;
+  -webkit-transition: .5s width;
+  transition: .5s width;
+}
+
+nav a:hover * {
+  -webkit-transition: .5s color;
+  transition: .5s color;
+}
+
+nav a:hover:first-child, nav a:hover:nth-child(4) {
+  color: #87A4FF;
+}
+
+nav a:hover:first-child:before, nav a:hover:nth-child(4):before {
+  width: 100%;
+  -webkit-transition: .5s width;
+  transition: .5s width;
+}
+
+nav a:hover:nth-child(2), nav a:hover:last-child {
+  color: #7EC97A;
+}
+
+nav a:hover:nth-child(2):before, nav a:hover:last-child:before {
+  width: 100%;
+  -webkit-transition: .5s width;
+  transition: .5s width;
+}
+
+@media screen and (max-width: 767px) {
+  nav a {
+    width: 100%;
+    padding: .5rem;
+    border-bottom: 1px dashed #C79564;
+  }
+}
+
+nav.open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    width: 100%;
+    padding-top: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    border-bottom: 5px solid #C79564;
+    display: none;
+    opacity: 0;
+  }
+}
+
+#hamburger .ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#hamburger .hamRotate.active {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#hamburger .line {
+  fill: none;
+  -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #C79564;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+#hamburger .ham8 .top {
+  stroke-dasharray: 40 160;
+}
+
+#hamburger .ham8 .middle {
+  stroke-dasharray: 40 142;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+}
+
+#hamburger .ham8 .bottom {
+  stroke-dasharray: 40 85;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transition: stroke-dashoffset 400ms, -webkit-transform 400ms;
+  transition: stroke-dashoffset 400ms, -webkit-transform 400ms;
+  transition: transform 400ms, stroke-dashoffset 400ms;
+  transition: transform 400ms, stroke-dashoffset 400ms, -webkit-transform 400ms;
+}
+
+#hamburger .ham8.active .top {
+  stroke-dashoffset: -64px;
+}
+
+#hamburger .ham8.active .middle {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+#hamburger .ham8.active .bottom {
+  stroke-dashoffset: -64px;
+}
+
+.maintit {
+  background: white;
+  color: #C79564;
+  padding: .5rem 2rem;
+  border-radius: .5rem;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.maintit:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/flw1.svg) center no-repeat;
+}
+
+.maintit:after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/flw3.svg) center no-repeat;
+}
+
+footer {
+  width: 100%;
+}
+
+footer .container {
+  border-top: 1px solid white;
+  text-align: center;
+  color: white;
+}
+
+.rightfixed {
+  position: fixed;
+  right: 0%;
+  bottom: 50%;
+  z-index: 50;
+}
+
+.rightfixed a {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  border-radius: 50%;
+  margin: .5rem 0;
+  display: block;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+.rightfixed a:first-child {
+  content: "";
+  background-color: #87A4FF;
+}
+
+.rightfixed a:last-child {
+  content: "";
+  background-color: #7EC97A;
+}
+
+.rightfixed a:hover {
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+.rightfixed a:hover:first-child {
+  background-color: #DAF8C4;
+}
+
+.rightfixed a:hover:last-child {
+  background-color: #9DD6FF;
+}
+
+@media screen and (max-width: 767px) {
+  .rightfixed a {
+    width: 50%;
+    border-radius: 0;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .rightfixed {
+    bottom: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+/*logo*/
+.logo-area {
+  text-align: center;
+  position: relative;
+  padding: 3% 0 5%;
+}
+
+.logo-area .logo {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-area .person {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: -2%;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-area::before, .logo-area::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 65%;
+  background: url(../img/idxbg1.png) no-repeat;
+  background-size: contain;
+}
+
+.logo-area::before {
+  top: 5%;
+  left: 5%;
+  background-position: left top;
+}
+
+.logo-area::after {
+  top: 5%;
+  right: 5%;
+  background-position: right top;
+}
+
+/*最新消息&plurk*/
+.news-area {
+  background: url(../img/woodbg.png) repeat top left;
+  position: relative;
+  margin-top: -8%;
+  padding: 5% 0 0;
+}
+
+.news-area::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background: url(../img/woodtop.png) repeat-x bottom left;
+  top: -50px;
+  left: 0;
+}
+
+.news-area .news-container {
+  background: #F8F4EF;
+  border-radius: 2rem;
+  border: 3px dashed #C79564;
+}
+
+.news-area .news-container .swiper-slide {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  padding-bottom: 39%;
+}
+
+.news-area .news-container .swiper-button-next:after {
+  content: "\f0da";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #7EC97A;
+  -webkit-transition: .5s color;
+  transition: .5s color;
+}
+
+.news-area .news-container .swiper-button-prev:after {
+  content: "\f0d9";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #7EC97A;
+  -webkit-transition: .5s color;
+  transition: .5s color;
+}
+
+.news-area .news-container .swiper-button-next:hover::after,
+.news-area .news-container .swiper-button-prev:hover::after {
+  color: #9DD6FF;
+  -webkit-transition: .5s color;
+  transition: .5s color;
+}
+/*# sourceMappingURL=main.css.map */
