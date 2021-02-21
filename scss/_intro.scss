@@ -1,0 +1,27 @@
+.club-intro {
+  position: relative;
+
+  .pic {
+    width: 40%;
+    text-align: right;
+
+    img {
+      max-width: 200px;
+    }
+  }
+
+  .intro-txt {
+    width: 60%;
+  }
+
+  .tit {
+    color: $mainBrn;
+    font-weight: bold;
+    @include fontCal(28);
+  }
+
+  p {
+    color: $mainBrn;
+    line-height: 2;
+  }
+}

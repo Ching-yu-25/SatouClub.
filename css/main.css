@@ -36,11 +36,12 @@ a {
 
 /*--mixin--*/
 html {
-  font-size: 16px;
+  font-size: 10px;
 }
 
 body {
   background: #F8F4EF;
+  font-size: 1.6rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -165,7 +166,7 @@ nav a:hover:nth-child(2):before, nav a:hover:last-child:before {
 @media screen and (max-width: 767px) {
   nav a {
     width: 100%;
-    padding: .5rem;
+    padding: 1rem;
     border-bottom: 1px dashed #C79564;
   }
 }
@@ -256,8 +257,8 @@ nav.open {
 .maintit {
   background: white;
   color: #C79564;
-  padding: .5rem 2rem;
-  border-radius: .5rem;
+  padding: 1rem 4rem;
+  border-radius: 1rem;
   position: relative;
   text-align: center;
   display: inline-block;
@@ -288,10 +289,85 @@ footer {
   width: 100%;
 }
 
+footer.page {
+  background: url(../img/woodbg.png) repeat top left;
+}
+
 footer .container {
   border-top: 1px solid white;
   text-align: center;
   color: white;
+}
+
+.custom-btn {
+  color: white;
+  position: relative;
+  letter-spacing: 1px;
+  padding: .325rem 1rem;
+  border: 2px solid white;
+  font-weight: bold;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: inline-block;
+  -webkit-box-shadow: 0px 3px 0 0 #C79564;
+          box-shadow: 0px 3px 0 0 #C79564;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-box-shadow .5s, -webkit-transform .5s;
+  transition: -webkit-box-shadow .5s, -webkit-transform .5s;
+  transition: box-shadow .5s, transform .5s;
+  transition: box-shadow .5s, transform .5s, -webkit-box-shadow .5s, -webkit-transform .5s;
+}
+
+.custom-btn span {
+  position: relative;
+  z-index: 3;
+}
+
+.custom-btn::before {
+  content: "";
+  position: absolute;
+  background-color: #7EC97A;
+  -webkit-transform: skewX(5deg);
+          transform: skewX(5deg);
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: -10%;
+  z-index: 1;
+}
+
+.custom-btn::after {
+  content: "";
+  position: absolute;
+  background-color: #87A4FF;
+  -webkit-transform: skewX(5deg);
+          transform: skewX(5deg);
+  width: 110%;
+  height: 100%;
+  top: 0;
+  right: -110%;
+  z-index: 2;
+  -webkit-transition: right .5s;
+  transition: right .5s;
+}
+
+.custom-btn:hover {
+  -webkit-transition: -webkit-box-shadow .5s, -webkit-transform .5s;
+  transition: -webkit-box-shadow .5s, -webkit-transform .5s;
+  transition: box-shadow .5s, transform .5s;
+  transition: box-shadow .5s, transform .5s, -webkit-box-shadow .5s, -webkit-transform .5s;
+  color: white;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+  -webkit-box-shadow: 0px 0px 0 0 #C79564;
+          box-shadow: 0px 0px 0 0 #C79564;
+}
+
+.custom-btn:hover::after {
+  -webkit-transition: right .5s;
+  transition: right .5s;
+  right: -5%;
 }
 
 .rightfixed {
@@ -307,7 +383,7 @@ footer .container {
   line-height: 70px;
   text-align: center;
   border-radius: 50%;
-  margin: .5rem 0;
+  margin: 1rem 0;
   display: block;
   -webkit-transition: .5s all;
   transition: .5s all;
@@ -455,5 +531,33 @@ footer .container {
   color: #9DD6FF;
   -webkit-transition: .5s color;
   transition: .5s color;
+}
+
+.club-intro {
+  position: relative;
+}
+
+.club-intro .pic {
+  width: 40%;
+  text-align: right;
+}
+
+.club-intro .pic img {
+  max-width: 200px;
+}
+
+.club-intro .intro-txt {
+  width: 60%;
+}
+
+.club-intro .tit {
+  color: #C79564;
+  font-weight: bold;
+  font-size: 2.8rem;
+}
+
+.club-intro p {
+  color: #C79564;
+  line-height: 2;
 }
 /*# sourceMappingURL=main.css.map */

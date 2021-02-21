@@ -8,3 +8,10 @@ $mainBrn:#C79564;
 $mainYel:#F3EDCE;
 
 /*--mixin--*/
+@function fontsize($size) {
+  @return $size / 10;
+}
+
+@mixin fontCal($size) {
+  font-size: fontsize($size)*1rem;
+}

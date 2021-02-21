@@ -1,9 +1,10 @@
 html {
-  font-size: 16px;
+  font-size: 10px;
 }
 
 body {
   background: $mainbg;
+  font-size: 1.6rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -126,7 +127,7 @@ nav {
 
     @media screen and (max-width:767px) {
       width: 100%;
-      padding: .5rem;
+      padding: 1rem;
       border-bottom: 1px dashed $mainBrn;
     }
   }
@@ -206,8 +207,8 @@ nav {
 .maintit {
   background: white;
   color: $mainBrn;
-  padding: .5rem 2rem;
-  border-radius: .5rem;
+  padding: 1rem 4rem;
+  border-radius: 1rem;
   position: relative;
   text-align: center;
   display: inline-block;
@@ -237,10 +238,71 @@ nav {
 footer {
   width: 100%;
 
+  &.page {
+    background: url(../img/woodbg.png) repeat top left;
+  }
+
   .container {
     border-top: 1px solid white;
     text-align: center;
     color: white;
+  }
+}
+
+.custom-btn {
+  color: white;
+  position: relative;
+  letter-spacing: 1px;
+  padding: .325rem 1rem;
+  border: 2px solid white;
+  font-weight: bold;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 0px 3px 0 0 $mainBrn;
+  transform: translateY(0);
+  transition: box-shadow .5s, transform .5s;
+
+  span {
+    position: relative;
+    z-index: 3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: $mainGrn;
+    transform: skewX(5deg);
+    width: 120%;
+    height: 100%;
+    top: 0;
+    left: -10%;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $mainBlue;
+    transform: skewX(5deg);
+    width: 110%;
+    height: 100%;
+    top: 0;
+    right: -110%;
+    z-index: 2;
+    transition: right .5s;
+  }
+
+  &:hover {
+    transition: box-shadow .5s, transform .5s;
+    color: white;
+    transform: translateY(3px);
+    box-shadow: 0px 0px 0 0 $mainBrn;
+
+    &::after {
+      transition: right .5s;
+      right: -5%;
+    }
   }
 }
 
@@ -256,7 +318,7 @@ footer {
     line-height: 70px;
     text-align: center;
     border-radius: 50%;
-    margin: .5rem 0;
+    margin: 1rem 0;
     display: block;
     transition: .5s all;
 
